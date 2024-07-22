@@ -23,10 +23,14 @@ export class User {
   password: string;
 
   @Exclude()
-  @CreateDateColumn()
-  createdDate: Date;
+  @CreateDateColumn({
+    name: 'created_at'
+  })
+  createdAt: Date;
 
   @Exclude()
-  @UpdateDateColumn()
-  updatedDate: Date;
+  @UpdateDateColumn({
+    name: 'updated_at'
+  })
+  updatedAt: Date;
 }
