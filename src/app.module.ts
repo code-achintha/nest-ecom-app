@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AuthModule } from './auth/auth.module';
-import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmConfig } from 'config/database.config';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -16,7 +16,7 @@ import { TypeOrmConfig } from 'config/database.config';
       inject: [ConfigModule],
     }),
     AuthModule,
-    UserModule,
+    UsersModule,
   ],
 })
 export class AppModule {}
