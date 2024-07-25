@@ -24,13 +24,17 @@ export class User {
 
   @Exclude()
   @CreateDateColumn({
-    name: 'created_at'
+    name: 'created_at',
   })
   createdAt: Date;
 
   @Exclude()
   @UpdateDateColumn({
-    name: 'updated_at'
+    name: 'updated_at',
   })
   updatedAt: Date;
+
+  constructor(partial: Partial<User>) {
+    Object.assign(this, partial);
+  }
 }
